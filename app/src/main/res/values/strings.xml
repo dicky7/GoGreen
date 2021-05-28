@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Go Green</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="log_in_with_email">Log in with Email</string>
+    <string name="skip">Skip</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="go_green">Go Green</string>
+    <string name="project">Project</string>
+    <string name="botol">Botol</string>
+    <string name="kertas">Kertas</string>
+    <string name="plastic">Plastic</string>
+</resources>
