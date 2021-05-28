@@ -22,4 +22,5 @@
     <string name="botol">Botol</string>
     <string name="kertas">Kertas</string>
     <string name="plastic">Plastic</string>
+    <string name="label_image_login">Image Login</string>
 </resources>
