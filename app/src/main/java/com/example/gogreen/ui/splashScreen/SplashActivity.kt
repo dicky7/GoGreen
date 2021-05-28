@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.gogreen.MainActivity
 import com.example.gogreen.R
-import com.example.gogreen.ui.login.ui.login.LoginActivity
+import com.example.gogreen.ui.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     companion object {

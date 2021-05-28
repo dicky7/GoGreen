@@ -23,4 +23,6 @@
     <string name="kertas">Kertas</string>
     <string name="plastic">Plastic</string>
     <string name="label_image_login">Image Login</string>
+    <string name="register">Register</string>
+    <string name="label_username">Username</string>
 </resources>

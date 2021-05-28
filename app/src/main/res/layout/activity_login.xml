@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".ui.login.ui.login.LoginActivity">
+    tools:context=".ui.login.LoginActivity">
 
 
     <ImageView
@@ -23,26 +23,33 @@
         android:textSize="35sp"
         android:textStyle="bold"
         android:letterSpacing="0.03"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+       />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/edt_email"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:background="@drawable/forget"
-        android:text="@string/email"
+        android:hint="@string/email"
         android:textColor="#0d6e6a"
         android:textStyle="bold"
         android:textSize="18dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:paddingLeft="20dp"/>
 
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/edt_password"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:background="@drawable/forget"
-        android:text="@string/password"
+        android:hint="@string/password"
         android:textColor="#0d6e6a"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -51,7 +58,7 @@
 
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btn_login"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/button"
@@ -61,24 +68,33 @@
         android:textColor="#FFF"
         android:layout_marginTop="20dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="or"
+        android:textSize="16sp"
+        />
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button"
+        android:text="@string/register"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+       />
+
 
 
     <Button
         android:id="@+id/skip_login"
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:textColor="@color/black"
         android:text="@string/skip" />
 
-    <ProgressBar
-        android:id="@+id/loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
-        android:visibility="gone" />
+
 </LinearLayout>
