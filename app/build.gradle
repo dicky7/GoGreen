@@ -8,7 +8,7 @@ android {
     buildToolsVersion '29.0.3'
 
     defaultConfig {
-        applicationId "com.example.gogreen"
+        applicationId "com.manut.gogreen"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
