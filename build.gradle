@@ -36,12 +36,15 @@ ext {
     idlingResVersion = '3.3.0'
 
     archLifecycleVersion = '2.1.0'
+
+    imagePickerVersion = '2.1'
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 
