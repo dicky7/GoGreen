@@ -10,11 +10,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.manut.gogreen.R
 import com.manut.gogreen.data.utils.UploadRequestBody
 import com.manut.gogreen.databinding.FragmentDashboardBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.manut.gogreen.data.utils.snackbar
+import com.manut.gogreen.ui.recommendation.AdapterItem
+import com.manut.gogreen.ui.recommendation.ItemRecommendationFragmentArgs
 import okhttp3.MultipartBody
 import java.io.File
 import java.io.FileInputStream
@@ -25,6 +29,7 @@ class DashboardFragment : Fragment(), View.OnClickListener {
     private val binding get() = _binding!!
     private  val dashboardViewModel: DashboardViewModel by viewModels()
     private var selectedImageUri: Uri? = null
+    private var category : String? = null
 
     companion object {
         const val REQUEST_CODE_PICK_IMAGE = 102
@@ -43,16 +48,39 @@ class DashboardFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dashboardViewModel.isLoading.observe(viewLifecycleOwner, {
-            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
-        })
+        if (activity != null){
+            val itemAdapter = AdapterItem()
 
-        dashboardViewModel.textView.observe(viewLifecycleOwner,{
-            binding.tvResult.text = "Classification : $it"
-        })
+            dashboardViewModel.isLoading.observe(viewLifecycleOwner, {
+                binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+            })
+            dashboardViewModel.toastText.observe(viewLifecycleOwner,{
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            })
+            dashboardViewModel.isLoading.observe(viewLifecycleOwner, {
+                binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+            })
+
+            dashboardViewModel.textView.observe(viewLifecycleOwner,{
+                binding.tvResult.text = "Classification : $it"
+                dashboardViewModel.setRecommendation(it)
+            })
 
 
-        binding.imgClassification.setOnClickListener(this)
+            binding.imgClassification.setOnClickListener(this)
+
+            dashboardViewModel.getRecommend().observe(viewLifecycleOwner,{ item ->
+                itemAdapter.setData(item)
+                itemAdapter.notifyDataSetChanged()
+            })
+            with(binding.rvRecommend){
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = itemAdapter
+            }
+
+        }
+
     }
 
     override fun onDestroyView() {

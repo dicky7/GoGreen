@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.manut.gogreen.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_itemRecommendationFragment"
+            app:destination="@id/itemRecommendationFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -22,4 +26,13 @@
         android:name="com.manut.gogreen.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/itemRecommendationFragment"
+        android:name="com.manut.gogreen.ui.recommendation.ItemRecommendationFragment"
+        android:label="Item Recommendation"
+        tools:layout="@layout/fragment_item_recommendation">
+        <argument
+            android:name="itemRecomm"
+            app:argType="com.manut.gogreen.data.source.remote.response.ResponseRecommendation" />
+    </fragment>
 </navigation>

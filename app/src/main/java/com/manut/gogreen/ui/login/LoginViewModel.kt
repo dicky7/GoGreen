@@ -29,7 +29,7 @@ class LoginViewModel :ViewModel() {
                 when {
                     response.code() == 200 -> {
                         _isLoading.value =false
-                        _toastText.value = "Login Sukses!}"
+                        _toastText.value = "Login Sukses!"
                         _toMainActivity.value = true
                     }
                     response.code() == 401 -> {

@@ -1,6 +1,8 @@
 package com.manut.gogreen.data.source.remote.network
 
+import com.manut.gogreen.data.source.remote.response.RecommendationItem
 import com.manut.gogreen.data.source.remote.response.ResponseClassification
+import com.manut.gogreen.data.source.remote.response.ResponseRecommendation
 import com.manut.gogreen.data.source.remote.response.ResponseUser
 import okhttp3.MultipartBody
 import retrofit2.Call
@@ -29,6 +31,18 @@ interface ApiService {
     fun classificationImage(
         @Part img: MultipartBody.Part
     ): Call<ResponseClassification>
+
+    @GET("recomendation")
+    fun getRecommendation(
+    ): Call<ArrayList<ResponseRecommendation>>
+
+    @FormUrlEncoded
+    @POST("recomendation")
+    fun getItemRecommendation(
+        @Field("category") email: String,
+    ): Call<ArrayList<RecommendationItem>>
+
+
 
 
 }
