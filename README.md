@@ -47,7 +47,6 @@ For Capstone Project Bangkit 2021
 - [x] [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 - [x] [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [x] [Glide](https://github.com/bumptech/glide)
-- [x] [TFLite](https://www.tensorflow.org/lite/api_docs) 
 - [x] [Retrofit](https://square.github.io/retrofit/).
 - [x] [CameraX](https://developer.android.com/training/camerax)
   
@@ -57,7 +56,6 @@ For Capstone Project Bangkit 2021
 - [x] Intro Apps & Animations
 - [x] Navigation Drawer
 - [x] CameraX
-- [x] Local File
 
 ## Requirement
 * Android Studio 4.2
